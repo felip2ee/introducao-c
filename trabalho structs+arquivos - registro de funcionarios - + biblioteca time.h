@@ -10,6 +10,7 @@ struct funcionario{
         time_t entrada;
         time_t saida;
         char status;
+
 };
 struct logf{
         char cpf[12];
