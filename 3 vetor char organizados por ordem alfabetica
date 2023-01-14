@@ -18,11 +18,11 @@ int main(){
     //mnr ou mrn
    if(strcmp(m,n)<= 0 && strcmp(m,r)<=0){
         if(strcmp(n,r)<=0){
-            printf("%s\n",m);
+            printf("%s\n\n",m);
             printf("%s\n",n);
             printf("%s\n",r);
         }else{
-            printf("%s\n",m);
+            printf("%s\n\n",m);
             printf("%s\n",r);
             printf("%s\n",n);
         }
@@ -30,11 +30,11 @@ int main(){
     //nmr ou nrm
     if(strcmp(n,m)<= 0 && strcmp(n,r)<=0){
         if(strcmp(m,r)<=0){
-            printf("%s\n",n);
+            printf("%s\n\n",n);
             printf("%s\n",m);
             printf("%s\n",r);
         }else{
-            printf("%s\n",n);
+            printf("%s\n\n",n);
             printf("%s\n",r);
             printf("%s\n",m);
         }
@@ -42,7 +42,7 @@ int main(){
     //rmn ou rnm
     if(strcmp(r,m)<= 0 && strcmp(r,n)<=0){
         if(strcmp(m,r)<=0){
-            printf("%s\n",r);
+            printf("%s\n\n",r);
             printf("%s\n",m);
             printf("%s\n",n);
         }else{
