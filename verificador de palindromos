@@ -1,0 +1,38 @@
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+
+char frase[200];
+char frase2[200];
+int i,tamanho,j;
+
+int main()
+{
+    printf("string:\n");
+    gets(frase);
+
+    for(j=0;frase[j]!= '\0';j++){
+        if(frase[j] == ' '){
+            for(i = j; frase[i] != '\0';i++){
+                frase[i]= frase[i+1];
+            }
+        }
+    }
+
+    tamanho=strlen(frase);
+    j = tamanho -1;
+    for(i=0; i<tamanho; i++ ){
+        frase2[i] = frase[j];
+        j--;
+    }
+    if(strcmp(frase,frase2)==0){
+        printf("eh um palindromo\n\n");
+    }
+    else{
+        printf("nao eh um palindromo\n\n");
+    }
+    fputs(frase2,stdout);
+
+}
+
