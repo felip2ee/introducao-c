@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+
+char m[20];
+char n[20];
+char r[20];
+
+int main(){
+   printf("string1:\n");
+   gets(m);
+   printf("string2:\n");
+   gets(n);
+   printf("string3:\n");
+   gets(r);
+    //mnr ou mrn
+   if(strcmp(m,n)<= 0 && strcmp(m,r)<=0){
+        if(strcmp(n,r)<=0){
+            printf("%s\n",m);
+            printf("%s\n",n);
+            printf("%s\n",r);
+        }else{
+            printf("%s\n",m);
+            printf("%s\n",r);
+            printf("%s\n",n);
+        }
+   }
+    //nmr ou nrm
+    if(strcmp(n,m)<= 0 && strcmp(n,r)<=0){
+        if(strcmp(m,r)<=0){
+            printf("%s\n",n);
+            printf("%s\n",m);
+            printf("%s\n",r);
+        }else{
+            printf("%s\n",n);
+            printf("%s\n",r);
+            printf("%s\n",m);
+        }
+    }
+    //rmn ou rnm
+    if(strcmp(r,m)<= 0 && strcmp(r,n)<=0){
+        if(strcmp(m,r)<=0){
+            printf("%s\n",r);
+            printf("%s\n",m);
+            printf("%s\n",n);
+        }else{
+            printf("%s\n",r);
+            printf("%s\n",n);
+            printf("%s\n",m);
+        }
+    }
+
+
+
+    return 0;
+}
