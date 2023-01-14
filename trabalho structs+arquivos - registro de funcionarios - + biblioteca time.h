@@ -98,8 +98,8 @@ void listagem_log(FILE *log) {
     }
 
 int main() {
-    // abrir arquivos (completar). Sugest„o: tentar abrir com "rb+", e se n„o abrir, tentar abrir com "wb+",
-	// e se n„o abrir, informar o usu·rio que n„o foi possÌvel
+    // abrir arquivos (completar). Sugest√£o: tentar abrir com "rb+", e se n√£o abrir, tentar abrir com "wb+",
+	// e se n√£o abrir, informar o usu√°rio que n√£o foi poss√≠vel
     FILE *funcionarios;
     FILE *log;
     funcionarios = fopen("funcionarios.bin","rb+");
@@ -116,7 +116,7 @@ int main() {
     }
 
 
-    // a partir daqui nesta funÁ„o main() o cÛdigo n„o deve ser alterado
+    // a partir daqui nesta fun√ß√£o main() o c√≥digo n√£o deve ser alterado
     int opcao;
     do {
         printf("\n\n 0-sair\n 1-registro entrada/saida\n 2-lista funcionarios\n 3-lista log\n");
