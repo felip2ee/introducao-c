@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//by:felip2ee
+
+char nomearq [20];
+int k,linhas;
+FILE *fp;
+char xx = '\n';
+int count = 0;
+
+int main (){
+	printf("nome do arquivo(.txt):\n");
+	setbuf(stdin,NULL);
+	gets(nomearq);
+	printf("arquivo escolhido:%s\n",nomearq);
+	fp = fopen(nomearq,"r");
+	if (fp == NULL){
+		printf("erro abrir arquivo\n");
+		system("pause");
+		return 0;
+	}
+	char leitor[1000];
+	while(fgets(leitor,sizeof(fp),fp)){
+		char *p = strstr(leitor,xx);
+		while(p){
+			count ++;
+			p = strstr( p + 1,xx);
+		}
+	}
+	fclose(fp);
+	printf ("o progama tem %d linhas",count);
+
+
+}
