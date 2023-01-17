@@ -44,6 +44,7 @@ void transposta (int **p)
 		}
 	printf("\n");
 	}
+
 }
 
 
