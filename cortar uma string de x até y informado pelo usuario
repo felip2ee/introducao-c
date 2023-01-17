@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char string[];
+int x,y;
+
+int main ()
+{
+	printf("digite a string\n");
+	setbuf(stdin,NULL);
+	gets(string);
+	printf("digite o x\n");
+	scanf("%d",&x);
+	if(x <= 0)
+	{
+		printf("x deve ser >= 0:\n")
+		scanf("%d",&x)
+	}
+	printf("digite o y\n");
+	scanf("%d",&y);
+	if(y <= x)
+	{
+		printf("x deve ser >= ao X:\n")
+		scanf("%d",&x)
+	}
+	cortar (string,x,y);
+	
+}
+
+void cortar (char string[],int x>0,int y>x)
+{
+	if (x < y)
+	{
+		for(k=x; k<=y;k++)
+		{
+			printf("%c",string[k+1]);
+		}
+	}
+	else
+	{
+		for(k=y; k<=x;k++)
+		{
+			printf("%c",string[k+1]);
+		}
+	}
+}
+
+  
