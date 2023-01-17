@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//para funcionar precisa existir os 2 arquivos .txt na pasta em que o progama esta rodando
+by:felip2ee
+
+FILE *arq1;
+FILE *arq2;
+FILE *arq3;
+char file1[300],file2[300],file3[300];
+
+
+int main (){
+    printf("arquivo1(exemplo.txt):\n");
+    setbuf(stdin,NULL);
+    gets(file1);
+    printf("arquivo2(exemplo.txt):\n");
+    gets(file2);
+
+
+    arq1 = fopen(file1,"r");
+    arq2 = fopen(file2,"r");
+    arq3 = fopen("resultado.txt","w");
+    if (arq1 == NULL || arq2 == NULL || arq3 == NULL){
+        printf ("erro open file");
+    }
+
+    concatenar(arq3,arq1);
+    concatenar(arq3,arq2);
+
+    printf("files marged successfully!");
+
+    fclose(arq1);
+    fclose(arq2);
+    fclose(arq3);
+
+    return 0;
+}
+void concatenar ( FILE *base, FILE *copiado)
+{
+    char leitor [1000];
+
+    while (fgets (leitor, sizeof leitor, copiado) != NULL)
+    {
+        fputs (leitor, base);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
