@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char nomearquivo[100];
+char palavra[20];
+FILE *fp;
+char temp[1000];
+int count = 0;
+
+int main (){
+		printf("Nome do arquivo:\n");
+		setbuf(stdin,NULL);
+		gets(nomearquivo);
+		printf("Palavra a ser contada:\n");
+		gets(palavra);
+		fp = fopen(nomearquivo,"r");
+		while(fgets(temp,sizeof(fp),fp)){
+			char *p = strstr(temp,palavra);
+			while(p){
+				count ++;
+                p = strstr(p + 1, palavra);
+			}
+       	}
+       	 printf("A palavra %s foi contado %d vezes",palavra,count);
+    }
