@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main (){
+	int k,j;
+	int **p;
+	p = (int**) malloc (5 * sizeof(int*));
+	for(k=0;k<5;k++){
+		p[k] = (int*) calloc (5,sizeof(int));
+	}
+	for(k=0;k<5;k++){
+		for (j=0;j<5;j++){
+			p[k][j] = rand();
+		}
+	}
+    printf ("matriz original\n\n==========\n");
+	for(k=0;k<5;k++){
+		for (j=0;j<5;j++){
+			printf ("%d ",p[k][j]);
+        }
+	printf("\n");
+	}
+    transposta(p);
+}
+void transposta (int **p)
+{
+	int **matriz;
+	int k,j;
+	matriz = (int**) calloc (5,sizeof(int*));
+	for(k=0;k<5;k++){
+		matriz[k] = (int*) calloc (1,sizeof(int));
+	}
+	for(k=0;k<5;k++){
+		for (j=0;j<5;j++){
+			matriz[k][j] = p[j][k];
+		}
+	}
+	printf ("matriz transposta\n\n==========\n");
+	for(k=0;k<5;k++){
+		for (j=0;j<5;j++){
+			printf ("%d ",matriz[k][j]);
+		}
+	printf("\n");
+	}
+}
+
+
