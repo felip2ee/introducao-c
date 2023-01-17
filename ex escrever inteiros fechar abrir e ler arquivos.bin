@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+FILE *arq1;
+
+int vetnum[100];
+int k;
+int soma=0;
+
+int main()
+    {
+    arq1 = fopen("soma.bin","wb");
+    for(k=0; k<100; k++)
+        {
+        vetnum[k]= k + 1;
+        fwrite(&vetnum[k], sizeof(int), 1, arq1);
+        }
+    fclose(arq1);
+
+
+
+    arq1 = fopen("soma.bin","rb");
+    for(k=0; k<100; k++)
+        {
+        fread(&vetnum[k],sizeof(int),1,arq1);
+        soma += vetnum[k];
+        }
+    printf("soma: %d",soma);
+    fclose(arq1);
+    }
+
+
+
+
+
