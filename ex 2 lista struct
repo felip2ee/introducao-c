@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* ==============================================
+
+Crie uma estrutura que represente um atleta. A
+estrutura deve conter o nome do atleta, seu
+esporte, idade, peso e altura. Escreva um
+programa que leia os dados de cinco atletas em
+um vetor. Calcule e exiba os nomes do atleta mais
+alto e do atleta mais velho.
+
+Escreva uma função fazer a leitura da estrutura.
+
+============================================== */
+
+struct atleta {
+	char nome[30];
+	char esporte[30];
+	int idade;
+	float peso;
+	float altura;
+};
+typedef struct atleta estrutura;
+
+void leitura(estrutura *p) {
+		printf("nome :\n");
+		setbuf(stdin,NULL);
+		gets(p->nome);
+		printf("esporte :\n");
+		gets(p->esporte);
+		printf("idade :\n");
+		scanf("%d",&p->idade);
+		printf("Altura :\n");
+		scanf("%f",&p->altura);
+		printf("Peso :\n");
+		scanf("%f",&p->peso);
+
+	return;
+}
+
+int main (){
+	int x,k;
+	int maisvelho = 0;
+	float maisalto = 0;
+
+	printf("Quantos Atletas?\n");
+	scanf("%d",&x);
+	estrutura vetor[x];
+
+	for(k = 0; k < x; k++){
+		printf("DADOS DO ATLETA %d:\n",k+1);
+		leitura(&vetor[k]);
+	}
+	
+	for(k=0;k<x;k++){
+		if(vetor[k].idade > maisvelho){
+			maisvelho = vetor[k].idade;
+		}
+		if(vetor[k].altura > maisalto){
+			maisalto = vetor[k].altura;
+		}
+	}
+	
+	for(k=0;k<x;k++){
+		if(vetor[k].idade == maisvelho){
+			printf("O atleto mais velho eh: %s\n",vetor[k].nome);
+		}
+		if(vetor[k].altura == maisalto){
+			printf("O atleto mais alto eh: %s\n",vetor[k].nome);
+		}
+	}
+}
