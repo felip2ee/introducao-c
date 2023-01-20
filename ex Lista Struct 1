@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/*
+=====================================================
+
+Crie uma estrutura denominada pessoa, contendo
+nome, idade e o endereço residencial. Crie uma
+instância estática e uma instância dinâmica
+dessa estrutura, fazendo a leitura dos dados do
+teclado. Após a leitura, imprima os dados lidos.
+
+=====================================================
+*/
+
+struct pessoa {
+	char nome[20];
+	int idade;
+	char endereco[50];
+};
+typedef struct pessoa estrutura;
+int main (){
+
+	estrutura pessoa1, *pessoa2;
+	printf("digite o nome:\n");
+	setbuf(stdin,NULL);
+	gets(pessoa1.nome);
+	printf("digite o endereço:\n");
+	gets(pessoa1.endereco);
+	printf ("Digite a idade:\n");
+	scanf("%d",&pessoa1.idade);
+	pessoa2 = &pessoa1;
+
+	printf("Struct Dinamica \n===============\n\n");
+	printf("nome: %s\n",pessoa2->nome);
+	printf("idade: %d\n",pessoa2->idade);
+	printf("endereco: %s\n",pessoa2->endereco);
+	printf("Struct Estatica \n===============\n\n");
+	printf("nome: %s\n",pessoa1.nome);
+	printf("idade: %d\n",pessoa1.idade);
+	printf("endereco: %s\n",pessoa1.endereco);
+
+	system("pause");
+	return 0;
+
+}
