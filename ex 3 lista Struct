@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct atleta{
+    char nome[30];
+    char esporte[30];
+    int idade;
+    float peso;
+    float altura;
+}Atleta;
+
+
+Atleta *criaDinamico(){
+    Atleta novo = (estrutura*) malloc (sizeof(estrutura));
+    printf("Nome:\n");
+    setbuf(stdin,NULL);
+    gets(novo->nome);
+    printf("Esporte:\n");
+    gets(novo->Esporte);
+    printf("Idade:\n");
+    scanf("%d",novo->idade);
+    printf("Peso:\n");
+    scanf("%f",novo->peso);
+    printf("Altura:\n");
+    scanf("%f",novo->altura);
+    return (novo);
+}
+
+Atleta criaEstatico (){
+    Atleta novo;
+    printf("Nome:\n");
+    setbuf(stdin,NULL);
+    gets(novo.nome);
+    printf("Esporte:\n");
+    gets(novo.esporte);
+    printf("Idade:\n");
+    scanf("%d",novo.idade);
+    printf("Peso:\n");
+    scanf("%f",novo.peso);
+    printf("Altura:\n");
+    scanf("%f",novo.altura);
+    return (novo);
+}
+
+void ImprimeValor (Atleta a){
+    printf("Nome: %s",a.nome);
+    printf("Esporte: %s",a.esporte);
+    printf("Idade: %d",a.idade);
+    printf("Peso: %f",a.peso);
+    printf("Altura: %f",a.peso);
+    return 0;
+}
+void ImprimeParametro (Atleta Grupo, int quantidade){
+    for ( int k=0; k<quantidade; k++ ){
+        printf("Nome: %s",grupo[k].nome);
+        printf("Esporte: %s",grupo[k].esporte);
+        printf("Idade: %d",grupo[k].idade);
+        printf("Peso: %f",grupo[k].peso);
+        printf("Altura: %f",grupo[k].peso);
+    }
+}
+
+
+
