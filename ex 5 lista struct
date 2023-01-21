@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+/* ==============================================
+
+Crie uma estrutura denominada Retângulo. Essa
+estrutura deverá conter o ponto superior
+esquerdo e o ponto inferior direito do retângulo.
+Cada ponto é definido pela estrutura Ponto, que
+contém as posições X e Y. Faça um programa que
+declare e leia uma estrutura Retângulo e leia um
+Ponto, e informe se esse ponto está ou não está
+dentro do retângulo
+
+============================================== */
+struct ponto{
+    float x;
+    float y;
+};
+
+struct retangulo {
+    struct ponto superior;
+    struct ponto inferior;
+};
+
+int main() {
+printf("\n\n ==============================================");
+printf("\n\n ================ by:@felip2ee ================");
+printf("\n\n ==============================================\n\n\n\n\n\n\n");
+
+    float ladoA;
+    float ladoB;
+    float diagonal;
+    float area;
+    float perimetro;
+
+    struct retangulo r;
+    printf("PONTO X SUPERIOR ESQUERDO:\n");
+    scanf("%f", &r.superior.x);
+    printf("PONTO Y SUPERIR ESQUERDO:\n");
+    scanf("%f", &r.superior.y);
+    printf("PONTO X INFERIOR DIREITO:\n");
+    scanf("%f", &r.inferior.x);
+    printf("PONTO Y INFERIOR DIREITO:\n");
+    scanf("%f", &r.inferior.y);
+
+    struct ponto confere;
+    printf("\nDigite X do ponto a conferir:");
+    scanf("%f", &confere.x);
+    printf("\nDigite Y do ponto a conferir:");
+    scanf("%f", &confere.y);
+
+    if((confere.x) >= (r.superior.x) && (confere.x) <= (r.inferior.x )){
+        if((confere.y) >= (r.inferior.y) && (confere.y) <= (r.superior.y)){
+            printf("\n\nO ponto esta dentro do retangulo");
+        }
+
+    }
+    else{
+        printf("\n\nO ponto nao esta dentro do retangulo");
+    }
+
+
+
+
+    ladoA = r.superior.y - r.inferior.y;
+    ladoB = r.inferior.x - r.superior.x;
+    diagonal = sqrt(ladoB*ladoB + ladoA*ladoA);
+    perimetro = ladoA * 2 + ladoB * 2;
+    area = ladoA * ladoB;
+
+    printf("\n\nladoA= %f\n",ladoA);
+    printf("ladoB= %f\n\n",ladoB);
+
+    printf("AREA = %f\n",area);
+    printf("PERIMETRO = %f\n",perimetro);
+    printf("COMPRIMENTO DA DIAGONAL = %f\n",diagonal);
+
+}
