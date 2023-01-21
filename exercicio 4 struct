@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+/* ==============================================
+
+Crie uma estrutura denominada Retângulo. Essa
+estrutura deverá conter o ponto superior
+esquerdo e o ponto inferior direito do retângulo.
+Cada ponto é definido pela estrutura Ponto, que
+contém as posições X e Y. Faça um programa que
+declare e leia uma estrutura Retângulo e exiba a
+área, o perímetro e o comprimento da diagonal
+desse retângulo.
+============================================== */
+struct ponto{
+	float x;
+	float y;
+};
+
+struct retangulo {
+	struct ponto superior;
+	struct ponto inferior;
+};
+
+int main(){
+printf("\n\n ==============================================");
+printf("\n\n ================ by:@felip2ee ================");
+printf("\n\n ==============================================\n\n\n\n\n\n\n");
+
+
+
+	struct retangulo r;
+	printf("PONTO X SUPERIOR ESQUERDO:\n");
+	scanf("%f", &r.superior.x);
+	printf("PONTO Y SUPERIR ESQUERDO:\n");
+	scanf("%f", &r.superior.y);
+    printf("PONTO X INFERIOR DIREITO:\n");
+    scanf("%f", &r.inferior.x);
+	printf("PONTO Y INFERIOR DIREITO:\n");
+	scanf("%f", &r.inferior.y);
+
+
+	float ladoA;
+	float ladoB;
+	float diagonal;
+	float area;
+	float perimetro;
+	printf("Superior Y= %f",r.superior.y);
+	printf("Inferior Y= %f",r.inferior.y);
+
+	ladoA = r.superior.y - r.inferior.y;
+	ladoB = r.superior.x - r.inferior.x;
+	diagonal = sqrt(ladoB*ladoB + ladoA*ladoA);
+	perimetro = ladoA * 2 + ladoB * 2;
+	area = ladoA * ladoB;
+
+	printf("\n\nladoA= %f\n",ladoA);
+	printf("ladoB= %f\n\n",ladoB);
+
+	printf("AREA = %f\n",area);
+	printf("PERIMETRO = %f\n",perimetro);
+	printf("COMPRIMENTO DA DIAGONAL = %f\n",diagonal);
+}
