@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+/* ====================================================================================
+
+Escreva uma função que, dado um número real
+passado por valor, atribua a parte inteira e a
+parte fracionária desse número em parâmetros
+passados por referência. O tipo do retorno deve
+ser void.  Ou seja, a função terá 3 parâmetros:
+1º) por valor, uma variável de ponto flutuante
+2º) por referência, um ponteiro para uma variável
+do tipo inteiro (irá receber a parte inteira do 1º
+parâmetro)
+3º) por referência, um ponteiro para uma variável
+de ponto flutuante (irá receber a parte fracionária do
+1º parâmetro)
+
+
+==================================================================================== */
+
+void separa_ponto_flutuante (float num,int *parte_inteira,float *parte_fracionada);
+
+int main(){
+	float temp;
+	float *q;
+	int *p;;
+	p = (int*) malloc(sizeof(int));
+	q = (float*) malloc(sizeof(float));
+	printf("Ponto Flutuante: \n");
+	scanf("%f",&temp);
+	separa_ponto_flutuante(temp,p,q);
+	printf("Parte Inteira: %d \nParte Fracionada: %f \n",*p,*q);
+}
+
+void separa_ponto_flutuante (float num, int *parte_inteira,float *parte_fracionada){
+    *parte_inteira = (int) num;
+	*parte_fracionada = num - (float)*parte_inteira;
+}
