@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* ==============================================
+
+Escreva uma função denominada MAIOR que
+receba por parâmetro dois números e retorne o
+maior deles.
+
+============================================== */
+
+void MAIOR(int x, int y){
+	if(x == y){
+		printf ("Sao iguais, x,y = %i",x);
+		return x;
+	}
+	if(x > y){
+		printf ("X eh maior, X = %i",x);
+		return x;
+	}
+	if(x < y){
+		printf ("Y eh maior Y = %i ",y);
+		return y;
+	}
+ }
+int main (){
+	int x,y;
+	int h;
+	printf("\nx: ");
+	scanf("%i",&x);
+	printf("\ny: ");
+	scanf("%i",&y);
+
+	MAIOR (x,y);
+
+}
