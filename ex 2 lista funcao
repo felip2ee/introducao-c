@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* ==============================================
+
+Escreva uma função denominada MAIOR que
+receba por parâmetro dois números e retorne o
+maior deles.
+
+============================================== */
+
+float volume_cilindro (float a,float b);
+const float pi = 3.141592;
+
+int main(){
+	float raio,h;
+
+
+	printf("\nDigite o raio: ");
+	scanf("%f",&raio);
+	printf("\nAltura: ");
+	scanf("%f",&h);
+	printf ("Volume do Cilindo eh = %f",volume_cilindro(raio,h));
+
+}
+float volume_cilindro(float a,float b){
+	float volume;
+	volume = pi * a * a * b;
+	return volume;
+}
