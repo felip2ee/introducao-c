@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* ====================================================================================
+
+Escreva uma função denominada COMBINACAO
+	que calcule o número de combinações (sem repetição), ou seja, de quantas
+	formas distintas é possível escolher S elementos de um conjunto de N elementos:
+
+A função COMBINACAO deve receber os parâmetros N e S com passagem por valor.
+
+Ela deve chamar outra função, denominada FATORIAL para o cálculo dos fatoriais.
+
+Utilize o tipo long int para retorno das funções.
+
+
+==================================================================================== */
+
+long Combinacao(n,s);
+
+long Fatorial (n);
+
+int main (){
+	long int a,b;
+	printf("Digite a Quantidade de Elementos:\n");
+	scanf("%ld",&a);
+	printf("Digite a Quantidade de Vezes:\n");
+	scanf("%ld",&b);
+	printf("Combinacao de %ld elementos %ld vezes: %ld",a,b,Combinacao(a,b));
+
+}
+
+long Fatorial (n){
+   long fat;
+   for(fat = 1; n > 1; n = n - 1)
+        fat = fat * n;
+    return fat;
+}
+long Combinacao(n,s){
+	long comb;
+    comb = ( Fatorial (n) )/ ((Fatorial(s))*(Fatorial(n-s)));
+	return comb;
+
+}
