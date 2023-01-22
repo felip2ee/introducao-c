@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+/* ====================================================================================
+
+Escreva uma função que, dado um número real
+passado por valor, atribua a parte inteira e a
+parte fracionária desse número em parâmetros
+
+
+
+==================================================================================== */
+
+float ponto_flutuante (float a);
+
+int main(){
+	float temp;
+	printf("Ponto Flutuante: \n");
+	scanf("%f",&temp);
+	ponto_flutuante(temp);
+}
+
+float ponto_flutuante(float temp) {
+	float b;
+	float c;
+	b = floor(temp);
+	c = temp - b;
+	printf("Parte Inteira: %f \nParte Fracionada: %f",b,c);
+
+}
